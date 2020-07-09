@@ -13,7 +13,8 @@ public class CurrencyMethods {
         // convertCurrency(double Amount, double Rate): double
         // getRateByName(String curr1, String curr2): double
 
-
+    // this conversion only works if we're going from usd -> other currency
+    // some conversition will have to divide, even divide twice...may need a conditional..
         return amount * rate;
     }
 
