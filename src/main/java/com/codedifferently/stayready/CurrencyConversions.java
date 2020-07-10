@@ -15,9 +15,6 @@ public class CurrencyConversions{
     public static void main(String[] args) {
         CurrencyConversions converter = new CurrencyConversions();
         converter.initRateMap();
-
-        
-
     }
 
     public void initRateMap(){
