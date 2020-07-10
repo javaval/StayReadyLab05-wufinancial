@@ -4,26 +4,6 @@ import java.util.HashMap;
 public class CurrencyMethods {
 
     HashMap<String, Double> convRates = new HashMap();
-    
-    public double convertCurrency(double amount, double rate){
-        //Pseudocode
-        //We want to be able to take any dollar amount and use the
-        //exchange rate formula to return that amount as the requested currency.
-        //We'll need:
-        // convertCurrency(double Amount, double Rate): double
-        // getRateByName(String curr1, String curr2): double
-
-    // this conversion only works if we're going from usd -> other currency
-    // some conversition will have to divide, even divide twice...may need a conditional..
-        return amount * rate;
-    }
-
-    //getRateByName(String curr1, String curr2): Double
-
-    public double getRate(String curr1, String curr2){
-        initRateMap();
-        return convRates.get(curr2)/convRates.get(curr1);
-    }
 
     public void initRateMap(){
         convRates.put("USD", 1.00);
@@ -39,5 +19,11 @@ public class CurrencyMethods {
         convRates.put("RMB", 6.92);
     }
 
+    public double toUSD(double originalAmount, String startCurrency){
+        return originalAmount/convRates.get(startCurrency);
+    } 
 
+    public double fromUSD(double toUSDAmount, String endCurrency){
+        return toUSDAmount * convRates.get(endCurrency);
+    }
 }
